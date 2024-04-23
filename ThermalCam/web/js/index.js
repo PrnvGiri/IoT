@@ -1,7 +1,7 @@
 'use strict';
 
 // Constants
-const TEMP_RANGE_LOW = 17.0;
+const TEMP_RANGE_LOW = 10.0;
 const TEMP_RANGE_HIGH = 37.0;
 const TEMP_RANGE = TEMP_RANGE_HIGH - TEMP_RANGE_LOW;
 
