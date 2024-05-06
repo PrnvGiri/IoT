@@ -183,3 +183,36 @@ setInterval(() => {
     $("#low-temp").text(lowTemp);
     $("#avg-temp").text(avgTemp.toFixed(1));
 }, 2500);
+// Function to convert pixel table to an image
+function convertPixelTableToImage() {
+    // Create a canvas element
+    var canvas = document.createElement('canvas');
+    canvas.width = 32; // Width of the pixel grid
+    canvas.height = 24; // Height of the pixel grid
+    var ctx = canvas.getContext('2d');
+    
+    // Loop through each cell in the table
+    var cells = document.querySelectorAll('table td');
+    var i = 0;
+    Array.prototype.forEach.call(cells, function(cell) {
+        // Get the background color of the cell
+        var bgColor = cell.style.backgroundColor;
+        
+        // Determine the pixel coordinates based on cell index
+        var x = i % 32;
+        var y = Math.floor(i / 32);
+        
+        // Set the pixel color on the canvas
+        ctx.fillStyle = bgColor;
+        ctx.fillRect(x, y, 1, 1);
+        
+        i++;
+    });
+    
+    // Convert the canvas to an image
+    var img = new Image();
+    img.src = canvas.toDataURL();
+    
+    // Append the image to the body or do whatever you want with it
+    document.body.appendChild(img);
+}
