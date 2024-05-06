@@ -1,35 +1,35 @@
-# Contactless Covid Camera
-> Health services and staff around the world are struggling to measure
-> a patient's body and head temperature without making some form of
-> contact. This project intends to provide a low-cost solution to
-> build out a contactless thermal camera using the Melexis MLX90640
-> and ESP32 (Wia Dot One in the video) connected over I2C. Data is
-> then sent via BLE and captured on a browser using Web Bluetooth.
+## Overview
+This repository contains code and instructions for connecting an MLX90640 sensor to an ESP32 microcontroller and creating a simple web application to collect and display temperature data. The temperature data is visualized on the website using color ranges, where red represents hot temperatures and blue represents cold temperatures.
 
-View on YouTube [here](https://youtu.be/yu9xXQP38FY)
+## Components
+- MLX90640 sensor
+- ESP32 microcontroller
+- Web browser with Bluetooth API support
 
-![](https://img.youtube.com/vi/yu9xXQP38FY/0.jpg)
+## Dependencies
+- Arduino IDE
+- ESP32 board support for Arduino IDE
+- Web Bluetooth API compatible web browser (e.g., Google Chrome)
 
-## Installation & Development setup
+## Setup
+1. Connect the MLX90640 sensor to the ESP32 microcontroller.
+2. Install the necessary libraries for the MLX90640 sensor in the Arduino IDE.
+3. Upload the provided ESP32 code to the microcontroller.
+4. Open the web application in a compatible web browser.
+5. Click on the "Connect" button to view available Bluetooth devices.
+6. Select the device named "Therma" to connect to the ESP32.
+7. Start receiving temperature data from the sensor.
 
-On ESP32, connect `pin 21 to SDA` and `pin 22 to SCL`.
+## Color Ranges
+- Red: Hot temperatures
+- Blue: Cold temperatures
+- Other colors: Intermediate temperature ranges
 
-To run the device code, the Arduino IDE is required. You can download it [here](https://www.arduino.cc/en/main/software). Once installed, support for ESP32 will need to be added. Steps to do that can be seen [here](https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/).
+## Demo
+View the demo of the webpage [here](https://prnvgiri.github.io/IoT/ThermalCam/web/).
 
-To run the web code, drag `index.html` into a Chrome browser or host on a web server of your choice.
+## Note
+Ensure that your ESP32 has BLE capabilities and that your web browser supports the Web Bluetooth API for seamless communication between the microcontroller and the web application.
 
-## Meta
-
-Conall Laverty ([@ConallLaverty](https://twitter.com/ConallLaverty))
-
-Distributed under the MIT license. See ``LICENSE`` for more information.
-
-[https://github.com/conalllaverty/covid-camera](https://github.com/conalllaverty/)
-
-## Contributing
-
-1. Fork it (<https://github.com/yourname/yourproject/fork>)
-2. Create your feature branch (`git checkout -b feature/fooBar`)
-3. Commit your changes (`git commit -am 'Add some fooBar'`)
-4. Push to the branch (`git push origin feature/fooBar`)
-5. Create a new Pull Request
+## Disclaimer
+This project is provided as-is without any warranties. Use it at your own risk.
